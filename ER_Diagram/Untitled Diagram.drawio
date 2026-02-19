@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.4.0">
+  <diagram name="Page-1" id="zFlmEUXQdw9qG4mXU4Mc">
+    <mxGraphModel dx="1500" dy="594" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-1" parent="1" style="text;whiteSpace=wrap;" value="DEPARTMENTS&#xa;-----------&#xa;PK  department_id&#xa;    department_name&#xa;    location&#xa;    budget&#xa;    created_at" vertex="1">
+          <mxGeometry height="120" width="150" x="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-17" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="DQp4kHtLpmia6w3aLfWJ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-2" parent="1" style="text;whiteSpace=wrap;" value="JOBS&#xa;----&#xa;PK  job_id&#xa;    job_title&#xa;    min_salary&#xa;    max_salary&#xa;    job_level" vertex="1">
+          <mxGeometry height="120" width="110" x="260" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-19" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" target="DQp4kHtLpmia6w3aLfWJ-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-20" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="DQp4kHtLpmia6w3aLfWJ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-22" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="DQp4kHtLpmia6w3aLfWJ-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-30" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" target="DQp4kHtLpmia6w3aLfWJ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-3" parent="1" style="text;whiteSpace=wrap;" value="EMPLOYEES&#xa;---------&#xa;PK  employee_id&#xa;    first_name&#xa;    last_name&#xa;    email (UNIQUE)&#xa;    phone&#xa;    hire_date&#xa;    date_of_birth&#xa;    gender&#xa;FK  department_id → DEPARTMENTS.department_id&#xa;FK  job_id → JOBS.job_id&#xa;FK  manager_id → EMPLOYEES.employee_id  (Self-Relationship)&#xa;    employment_status" vertex="1">
+          <mxGeometry height="230" width="390" x="530" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-5" parent="1" style="text;whiteSpace=wrap;" value="SALARY_HISTORY&#xa;--------------&#xa;PK  salary_id&#xa;FK  employee_id → EMPLOYEES.employee_id&#xa;    salary_amount&#xa;    effective_from&#xa;    effective_to&#xa;    increment_percentage" vertex="1">
+          <mxGeometry height="140" width="290" x="180" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-6" parent="1" style="text;whiteSpace=wrap;" value="PERFORMANCE_REVIEWS&#xa;-------------------&#xa;PK  review_id&#xa;FK  employee_id → EMPLOYEES.employee_id&#xa;FK  reviewer_id → EMPLOYEES.employee_id&#xa;    review_date&#xa;    rating (1–5)&#xa;    review_cycle" vertex="1">
+          <mxGeometry height="140" width="290" x="1180" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-7" parent="1" style="text;whiteSpace=wrap;" value="ATTENDANCE&#xa;----------&#xa;PK  attendance_id&#xa;FK  employee_id → EMPLOYEES.employee_id&#xa;    attendance_date&#xa;    check_in&#xa;    check_out&#xa;    status (Present/Late/Absent)" vertex="1">
+          <mxGeometry height="140" width="290" x="1260" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-8" parent="1" style="text;whiteSpace=wrap;" value="LEAVES&#xa;------&#xa;PK  leave_id&#xa;FK  employee_id → EMPLOYEES.employee_id&#xa;    leave_type&#xa;    start_date&#xa;    end_date&#xa;    leave_status (Approved/Pending/Rejected)" vertex="1">
+          <mxGeometry height="140" width="290" x="1200" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-29" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="DQp4kHtLpmia6w3aLfWJ-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-9" parent="1" style="text;whiteSpace=wrap;" value="PROJECTS&#xa;--------&#xa;PK  project_id&#xa;    project_name&#xa;    start_date&#xa;    end_date&#xa;    budget&#xa;FK  department_id → DEPARTMENTS.department_id" vertex="1">
+          <mxGeometry height="140" width="320" x="640" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-10" parent="1" style="text;whiteSpace=wrap;" value="EMPLOYEE_PROJECTS&#xa;-----------------&#xa;PK/FK employee_id → EMPLOYEES.employee_id&#xa;PK/FK project_id → PROJECTS.project_id&#xa;      allocation_percentage&#xa;      role_in_project&#xa;      assigned_date" vertex="1">
+          <mxGeometry height="120" width="300" x="740" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-31" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" target="DQp4kHtLpmia6w3aLfWJ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-11" parent="1" style="text;whiteSpace=wrap;" value="TRAINING_PROGRAMS&#xa;-----------------&#xa;PK  training_id&#xa;    training_name&#xa;    cost&#xa;    start_date&#xa;    end_date" vertex="1">
+          <mxGeometry height="120" width="170" x="520" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-12" parent="1" style="text;whiteSpace=wrap;" value="EMPLOYEE_TRAINING&#xa;-----------------&#xa;PK/FK employee_id → EMPLOYEES.employee_id&#xa;PK/FK training_id → TRAINING_PROGRAMS.training_id&#xa;      completion_status&#xa;      score" vertex="1">
+          <mxGeometry height="110" width="340" x="160" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-15" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.696;entryDx=0;entryDy=0;entryPerimeter=0;" target="DQp4kHtLpmia6w3aLfWJ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-16" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.013;entryY=0.316;entryDx=0;entryDy=0;entryPerimeter=0;" target="DQp4kHtLpmia6w3aLfWJ-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-21" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.011;entryY=0.344;entryDx=0;entryDy=0;entryPerimeter=0;" target="DQp4kHtLpmia6w3aLfWJ-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-23" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.005;entryY=0.33;entryDx=0;entryDy=0;entryPerimeter=0;" target="DQp4kHtLpmia6w3aLfWJ-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-24" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.464;entryY=0.038;entryDx=0;entryDy=0;entryPerimeter=0;" target="DQp4kHtLpmia6w3aLfWJ-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-27" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=-0.009;entryY=0.806;entryDx=0;entryDy=0;entryPerimeter=0;" target="DQp4kHtLpmia6w3aLfWJ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQp4kHtLpmia6w3aLfWJ-28" edge="1" parent="1" source="DQp4kHtLpmia6w3aLfWJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.001;entryY=0.395;entryDx=0;entryDy=0;entryPerimeter=0;" target="DQp4kHtLpmia6w3aLfWJ-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
