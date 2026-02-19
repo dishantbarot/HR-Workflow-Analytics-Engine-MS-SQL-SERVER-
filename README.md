@@ -113,7 +113,3 @@ This project demonstrates strong SQL proficiency, business analytics thinking, a
 - CASE-based business modeling
 - Multi-table joins
 - Data integrity constraints
-
-
-# 📂 Project Structure
-
